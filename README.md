@@ -57,6 +57,79 @@ No protótipo, o perfil é resolvido automaticamente a partir do e-mail digitado
 - **Configurações** — configurações gerais do sistema
 
 ---
+ 
+## Stack tecnológica
+ 
+- **[React 18](https://react.dev/)** + **TypeScript**
+- **[Vite 6](https://vitejs.dev/)** — build e dev server
+- **[Tailwind CSS 4](https://tailwindcss.com/)** — estilização
+- **[shadcn/ui](https://ui.shadcn.com/)** sobre **[Radix UI](https://www.radix-ui.com/)** — biblioteca de componentes (accordion, dialog, dropdown, tabs, sidebar, etc.)
+- **[Material UI](https://mui.com/)** (`@mui/material`, `@mui/icons-material`) — componentes complementares
+- **[Lucide React](https://lucide.dev/)** — ícones
+- **[Recharts](https://recharts.org/)** — gráficos e relatórios
+- **[React Hook Form](https://react-hook-form.com/)** — formulários
+- **[Motion](https://motion.dev/)** (Framer Motion) — animações
+- **[Sonner](https://sonner.emilkowal.ski/)** — notificações toast
+- **[React Router](https://reactrouter.com/)** — roteamento
+- Outras libs de apoio: `date-fns`, `embla-carousel-react`, `react-dnd`, `react-resizable-panels`, `cmdk`, `vaul`, `canvas-confetti`
+> ⚠️ Este é um protótipo de **interface (front-end apenas)**. Não há backend, banco de dados ou autenticação real — os dados exibidos são mockados diretamente nos componentes.
+ 
+---
+ 
+## Estrutura do projeto
+ 
+```
+.
+├── index.html
+├── package.json
+├── vite.config.ts
+├── src/
+│   ├── main.tsx                     # Entry point
+│   ├── app/
+│   │   ├── App.tsx                  # Roteamento por perfil (role) e estado do usuário logado
+│   │   └── components/
+│   │       ├── Login.tsx            # Tela de login / seleção de perfil
+│   │       ├── Layout.tsx           # Layout base (sidebar, header, navegação)
+│   │       ├── student/
+│   │       │   └── StudentApp.tsx   # Portal do Aluno
+│   │       ├── staff/
+│   │       │   └── StaffApp.tsx     # Painel do Colaborador
+│   │       ├── coordinator/
+│   │       │   └── CoordinatorApp.tsx  # Painel do Coordenador
+│   │       ├── admin/
+│   │       │   └── AdminApp.tsx     # Painel do Administrador
+│   │       ├── figma/
+│   │       │   └── ImageWithFallback.tsx
+│   │       └── ui/                  # Componentes shadcn/ui (button, card, table, tabs, sidebar...)
+│   ├── styles/                      # globals.css, theme.css, tailwind.css, fonts.css
+│   └── imports/                     # Assets (logo, imagens)
+└── guidelines/
+    └── Guidelines.md                # Diretrizes de design do protótipo
+```
+ 
+---
+ 
+## Como rodar localmente
+ 
+**Pré-requisitos:** [Node.js](https://nodejs.org/) 18+ e `npm` (ou `pnpm`).
+ 
+```bash
+# 1. Instalar dependências
+npm install
+ 
+# 2. Rodar o servidor de desenvolvimento
+npm run dev
+```
+ 
+O projeto abrirá em `http://localhost:5173` (porta padrão do Vite).
+ 
+Para gerar o build de produção:
+ 
+```bash
+npm run build
+```
+ 
+---
 
 ## Como testar os perfis
 
